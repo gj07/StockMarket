@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using StockMarket.AdminAPI.DBAccess;
+using StockMarket.AdminAPI.Repositories;
+using StockMarket.AdminAPI.Services;
 
 namespace StockMarket.AdminAPI
 {
@@ -27,6 +29,8 @@ namespace StockMarket.AdminAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<StockDBContext>();
+            services.AddTransient<IAdminRepository, AdminRepository>();
+            services.AddTransient<IAdminService, AdminService>();
             services.AddControllers();
         }
 
