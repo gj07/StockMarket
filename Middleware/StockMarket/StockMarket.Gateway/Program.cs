@@ -20,6 +20,10 @@ namespace StockMarket.Gateway
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.ConfigureAppConfiguration((host,config) =>
+                    {
+                        config.AddJsonFile("ocelot.json");
+                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }

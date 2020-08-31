@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using StockMarket.UserAPI.DBAccess;
+using StockMarket.UserAPI.Repositories;
+using StockMarket.UserAPI.Services;
 
 namespace StockMarket.UserAPI
 {
@@ -26,6 +28,8 @@ namespace StockMarket.UserAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<StockDBContext>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserService, UserService>();
             services.AddControllers();
         }
 

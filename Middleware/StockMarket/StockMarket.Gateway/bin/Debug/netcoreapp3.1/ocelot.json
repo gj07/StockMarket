@@ -1,0 +1,51 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Account/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 51233
+        }
+      ],
+      "UpstreamPathTemplate": "/Account/{url}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Admin/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 51244
+        }
+      ],
+      "UpstreamPathTemplate": "/Admin/{url}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 51246
+        }
+      ],
+      "UpstreamPathTemplate": "/User/{url}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Excel/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 51260
+        }
+      ],
+      "UpstreamPathTemplate": "/Excel/{url}"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:51267"
+  }
+}
