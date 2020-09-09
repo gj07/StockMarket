@@ -1,0 +1,42 @@
+<app-admin-landing></app-admin-landing>
+
+<div class="card mb-4 shadow-sm text-center layout mt">
+  <div class="card-header">
+    <h4 class="font-weight-normal">Company Details</h4>
+  </div>
+  <div class="card-body">
+    <table>
+      <tr>
+        <td>Company Code: </td>
+        <td><input type="text" [(ngModel)]="CompanyCode"></td>
+      </tr>
+      <tr>
+        <td>Company Name: </td>
+        <td><input type="text" [(ngModel)]="CompanyName"></td>
+      </tr>
+      <tr>
+        <td>CEO: </td>
+        <td><input type="text" [(ngModel)]="CEO"></td>
+      </tr>
+      <tr>
+        <td>Board of Directors: </td>
+        <td><input type="text" [(ngModel)]="BoardOfDirectors"></td>
+      </tr>
+      <tr>
+        <td>Stock Exchanges Listed On: </td>
+        <td><input type="text" [(ngModel)]="StockExchangesListedOn"></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button class="btn btn-lg btn-primary" (click)="add()">Save</button>
+          &nbsp;&nbsp;<button class="btn btn-lg btn-primary" (click)="get()">Get</button>
+          &nbsp;&nbsp;<button class="btn btn-lg btn-primary" (click)="delete()">Delete</button>
+          &nbsp;&nbsp;<button class="btn btn-lg btn-primary" (click)="update()">Edit</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="mt-5 mb-3 text-center">
+  <a class="nav-link" routerLink="/view-companies">View All Companies</a>
+</div>

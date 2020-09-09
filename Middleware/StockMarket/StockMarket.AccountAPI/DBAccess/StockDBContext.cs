@@ -16,7 +16,7 @@ namespace StockMarket.AccountAPI.DBAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=SOCDNET38;Initial Catalog=StockMarketDB;User ID=sa;Password=pass@word1");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-O4N6UKJ\\SQLEXPRESS;Initial Catalog=StockMarketDB;Integrated Security=True");
         }
     }
 }

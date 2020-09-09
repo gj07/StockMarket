@@ -26,6 +26,14 @@ namespace StockMarket.ExcelAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<StockDBContext>();
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options =>
+       options.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                );
+            });
             services.AddControllers();
         }
 
@@ -38,7 +46,7 @@ namespace StockMarket.ExcelAPI
             }
 
             app.UseRouting();
-
+            app.UseCors("AllowOrigin");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

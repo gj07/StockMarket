@@ -1,0 +1,29 @@
+<app-admin-landing></app-admin-landing>
+
+<div class="card mb-4 shadow-sm text-center layout mt">
+  <div class="card-header">
+    <h4 class="font-weight-normal">List of Companies</h4>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>CompanyCode</th>
+          <th>CompanyName</th>
+          <th>CEO</th>
+          <th>Board Of Directors</th>
+          <th>Stock Exchanges Listed On</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list">
+          <th>{{this.item.CompanyCode}}</th>
+          <th>{{this.item.CompanyName}}</th>
+          <th>{{this.item.CEO}}</th>
+          <th>{{this.item.BoardOfDirectors}}</th>
+          <th>{{this.item.StockExchangesListedOn}}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

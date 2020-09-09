@@ -1,0 +1,16 @@
+.layout {
+    width: 100%;
+    max-width: 450px;
+    padding: 15px;
+    margin: auto;
+}
+.mt {
+    margin-top: 7%;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 0 17px;
+}
+.inner {
+    display: inline-block;
+}

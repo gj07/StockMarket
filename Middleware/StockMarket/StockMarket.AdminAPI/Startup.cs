@@ -31,6 +31,14 @@ namespace StockMarket.AdminAPI
             services.AddDbContext<StockDBContext>();
             services.AddTransient<IAdminRepository, AdminRepository>();
             services.AddTransient<IAdminService, AdminService>();
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options =>
+       options.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                );
+            });
             services.AddControllers();
         }
 
@@ -45,7 +53,7 @@ namespace StockMarket.AdminAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors("AllowOrigin");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
